@@ -1,5 +1,5 @@
 # Sorts
-----
+
 ## What is this project?
 
 In this repo I've made some basic sorting algorithms. So far these are just in Javascript for my own edification but I plan to add more languages as I continue. Right now there are:
@@ -12,7 +12,6 @@ This is the way I've chosen to use up some of my free time so that it feels like
 
 Each program by default will generate a 10 integer list of random numbers from 1-100 and sort that list. These values can be altered using flags at run time to generate a different length list or another range of values.
 
-----
 ## Usage
 
 You can download and run these files on your own computer if you have [node.js](https://nodejs.org/en/) on your local system. 
@@ -26,6 +25,5 @@ Available flags are:
     -l <number of items to generate>
     -r <minimum value to generate> <maximum value to generate>
 
-----
 ## Changelog
 * 2017-Sep-1: Initial codebase, 3 basic sorts, light customization options
