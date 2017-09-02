@@ -6,16 +6,20 @@
  * Author: Lucas Burns
  * Version: 2017-9-1
  * 
- * TODO: Add flags for natural run compatibility, descending order, verbosity, size of array, range of numbers
+ * TODO: Add flags for natural run compatibility, descending order, verbosity
  */
 
 /**
- * Populates an array with random integers from 1-100
- * @param {Array} items 
+ * Populates an array to the given size (default 10) 
+ * with random integers from min to max (default 1-100)
+ * @param {Array<number>} items
+ * @param {number} len
+ * @param {number} min
+ * @param {number} max 
  */
-function populate(items){
-	for (var i = 0; i < items.length; i++) {
-		items[i] = Math.floor(Math.random() * 100);
+function populate(items, len = 10, min = 1, max = 100){
+	for (var i = 0; i < len; i++) {
+		items.push(Math.floor(Math.random() * (max - min + 1) + min));
 	}
 }
 
@@ -60,11 +64,42 @@ function merge(left, right, result){
     return result;
 }
 
-a = new Array(10);
-populate(a);
+pv = process.argv;
+errors = new Array;
+parms = new Array(3);
+a = new Array;
+for (var i = pv.indexOf("merge.js"); i < pv.length; i++){
+	if (pv[i] == "-l"){
+		if (i < pv.length - 1 && Number.isInteger(Number.parseInt(pv[i + 1]))){
+			parms[0] = Number.parseInt(pv[i + 1]);
+		}
+		else {
+			errors.push("-l <# of items>");
+		}	
+	}
+	if (pv[i] == "-r"){
+		if (i < pv.length - 2 && Number.isInteger(Number.parseInt(pv[i + 1])) && Number.isInteger(Number.parseInt(pv[i + 2]))){
+			parms[1] = Number.parseInt(pv[i + 1]);
+			parms[2] = Number.parseInt(pv[i + 2]);
+		}
+		else {
+			errors.push("-r <min value> <max value>");
+		}	
+	}
+}
+
+if (errors.length !== 0){
+	console.log("Usage: node merge.js " + errors.join(" "));
+	return;
+}
+
+populate(a, parms[0], parms[1], parms[2]);
+
 console.log("Original arrary:	[" + a + "]");
 comparisons = 0;
 accesses = 0;
-a = sort(a);
+
+sort(a);
+
 console.log("Sorted array:	 	[" + a + "]");
 console.log("%d comparisons		%d array accesses.", comparisons, accesses);
