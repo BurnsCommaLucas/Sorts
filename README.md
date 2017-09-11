@@ -13,7 +13,6 @@ This is the way I've chosen to use up some of my free time so that it feels like
 
 Each program by default will generate a 10 integer list of random numbers from 1-100 and sort that list. These values can be altered using flags at run time to generate a different length list or another range of values.
 
-
 ## Usage
 
 You can download and run these files on your own computer if you have [node.js](https://nodejs.org/en/) on your local system. 
@@ -21,7 +20,6 @@ You can download and run these files on your own computer if you have [node.js](
 Syntax to run each is:
 
     node <filename>.js
-
 
 ## Changelog
 * 2017-Sep-10: Added Selection sort, removed flags
