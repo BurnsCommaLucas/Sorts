@@ -4,18 +4,17 @@
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns
- * Version: 2017-9-1
+ * Version: 2017-9-10
  * 
- * TODO: Add flag for descending order, optional verbosity
  */
 
 /**
  * Populates an array to the given size (default 10) 
  * with random integers from min to max (default 1-100)
  * @param {Array<number>} items
- * @param {number} len
- * @param {number} min
- * @param {number} max 
+ * @param {?number} len
+ * @param {?number} min
+ * @param {?number} max 
  */
 function populate(items, len = 10, min = 1, max = 100){
 	for (var i = 0; i < len; i++) {
@@ -25,7 +24,7 @@ function populate(items, len = 10, min = 1, max = 100){
 
 /**
  * Sorts a given array of numbers using Insertion sort
- * @param {Array} items 
+ * @param {Array<number>} items 
  */
 function sort(items){
 	var i = 1;
@@ -45,7 +44,7 @@ function sort(items){
  * Swaps the contents of two given indices in a given array
  * @param {int} firstIdx 
  * @param {int} secondIdx 
- * @param {Array} items 
+ * @param {Array<any>} items 
  */
 function swap(firstIdx, secondIdx, items){
 	if (firstIdx <= items.length && secondIdx <= items.length) {
@@ -56,38 +55,10 @@ function swap(firstIdx, secondIdx, items){
 	}
 }
 
-pv = process.argv;
-errors = new Array;
-parms = new Array(3);
-a = new Array;
-for (var i = pv.indexOf("insert.js"); i < pv.length; i++){
-	if (pv[i] == "-l"){
-		if (i < pv.length - 1 && Number.isInteger(Number.parseInt(pv[i + 1]))){
-			parms[0] = Number.parseInt(pv[i + 1]);
-		}
-		else {
-			errors.push("-l <# of items>");
-		}	
-	}
-	if (pv[i] == "-r"){
-		if (i < pv.length - 2 && Number.isInteger(Number.parseInt(pv[i + 1])) && Number.isInteger(Number.parseInt(pv[i + 2]))){
-			parms[1] = Number.parseInt(pv[i + 1]);
-			parms[2] = Number.parseInt(pv[i + 2]);
-		}
-		else {
-			errors.push("-r <min value> <max value>");
-		}	
-	}
-}
+var a = new Array;
+populate(a);
 
-if (errors.length !== 0){
-	console.log("Usage: node insert.js " + errors.join(" "));
-	return;
-}
-
-populate(a, parms[0], parms[1], parms[2]);
-
-console.log("Original arrary:	[" + a + "]");
+console.log("Original array:		[" + a + "]");
 comparisons = 0;
 accesses = 0;
 

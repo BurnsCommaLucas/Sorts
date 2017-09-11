@@ -4,18 +4,17 @@
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns
- * Version: 2017-9-1
+ * Version: 2017-9-10
  * 
- * TODO: Add flags for natural run compatibility, descending order, verbosity
  */
 
 /**
  * Populates an array to the given size (default 10) 
  * with random integers from min to max (default 1-100)
  * @param {Array<number>} items
- * @param {number} len
- * @param {number} min
- * @param {number} max 
+ * @param {?number} len
+ * @param {?number} min
+ * @param {?number} max 
  */
 function populate(items, len = 10, min = 1, max = 100){
 	for (var i = 0; i < len; i++) {
@@ -25,7 +24,7 @@ function populate(items, len = 10, min = 1, max = 100){
 
 /**
  * Sorts a given array of numbers using Merge sort
- * @param {Array} items 
+ * @param {Array<number>} items 
  */
 function sort(items){
     if (items.length === 1) {
@@ -43,9 +42,9 @@ function sort(items){
 
 /**
  * Sorting helper to sort and merge lists
- * @param {Array} left 
- * @param {Array} right 
- * @param {Array} result 
+ * @param {Array<number>} left 
+ * @param {Array<number>} right 
+ * @param {Array<number>} result 
  */
 function merge(left, right, result){
     var leftIdx = 0;
@@ -64,42 +63,15 @@ function merge(left, right, result){
     return result;
 }
 
-pv = process.argv;
-errors = new Array;
-parms = new Array(3);
-a = new Array;
-for (var i = pv.indexOf("merge.js"); i < pv.length; i++){
-	if (pv[i] == "-l"){
-		if (i < pv.length - 1 && Number.isInteger(Number.parseInt(pv[i + 1]))){
-			parms[0] = Number.parseInt(pv[i + 1]);
-		}
-		else {
-			errors.push("-l <# of items>");
-		}	
-	}
-	if (pv[i] == "-r"){
-		if (i < pv.length - 2 && Number.isInteger(Number.parseInt(pv[i + 1])) && Number.isInteger(Number.parseInt(pv[i + 2]))){
-			parms[1] = Number.parseInt(pv[i + 1]);
-			parms[2] = Number.parseInt(pv[i + 2]);
-		}
-		else {
-			errors.push("-r <min value> <max value>");
-		}	
-	}
-}
 
-if (errors.length !== 0){
-	console.log("Usage: node merge.js " + errors.join(" "));
-	return;
-}
+var a = new Array;
+populate(a);
 
-populate(a, parms[0], parms[1], parms[2]);
-
-console.log("Original arrary:	[" + a + "]");
+console.log("Original array:	        [" + a + "]");
 comparisons = 0;
 accesses = 0;
 
-sort(a);
+a = sort(a);
 
 console.log("Sorted array:	 	[" + a + "]");
 console.log("%d comparisons		%d array accesses.", comparisons, accesses);

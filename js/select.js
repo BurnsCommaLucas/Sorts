@@ -1,5 +1,5 @@
 /**
- * Bubble sort implementation in Javascript.
+ * Selection sort implementation in Javascript.
  * Generates and sorts a list of random integers.
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
@@ -23,21 +23,23 @@ function populate(items, len = 10, min = 1, max = 100){
 }
 
 /**
- * Sorts a given array of numbers using Bubble sort
+ * Sorts a given array of numbers using Selection sort
  * @param {Array<number>} items 
  */
 function sort(items){
-    var swapped;
-    do {
-        swapped = false;
-		for (var i = 0; i < items.length - 1; i++) { 
-			comparisons += 1;
-			if (items[i] > items[i + 1]) {
-				swapped = true;
-				swap(i, i + 1, items);
+	for (var i = 0; i < items.length - 1; i++){
+		var min = i;
+		for (var j = i; j < items.length; j++){
+			if (items[j] < items[min]){
+				min = j;
 			}
+			accesses += 2;
+			comparisons++;
 		}
-    } while (swapped);
+		if (min != i){
+			swap(i, min, items);
+		}
+	}
 }
 
 /**
