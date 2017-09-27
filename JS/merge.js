@@ -4,23 +4,11 @@
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns
- * Version: 2017-9-10
+ * Version: 2017-9-26
  * 
  */
 
-/**
- * Populates an array to the given size (default 10) 
- * with random integers from min to max (default 1-100)
- * @param {Array<number>} items
- * @param {?number} len
- * @param {?number} min
- * @param {?number} max 
- */
-function populate(items, len = 10, min = 1, max = 100){
-	for (var i = 0; i < len; i++) {
-		items.push(Math.floor(Math.random() * (max - min + 1) + min));
-	}
-}
+const process = require('./process.js');
 
 /**
  * Sorts a given array of numbers using Merge sort
@@ -63,9 +51,7 @@ function merge(left, right, result){
     return result;
 }
 
-
-var a = new Array;
-populate(a);
+var a = process.populate();
 
 console.log("Original array:	        [" + a + "]");
 comparisons = 0;
