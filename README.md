@@ -22,5 +22,6 @@ Syntax to run each is:
     node <filename>.js
 
 ## Changelog
+* 2017-Sep-26: Separated redundant code into process.js, fixed js/JS path conflict
 * 2017-Sep-10: Added Selection sort, removed flags
-* 2017-Sep-1: Initial codebase, 3 basic sorts, light customization options
+* 2017-Sep-01: Initial codebase, 3 basic sorts, light customization options

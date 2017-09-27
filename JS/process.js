@@ -1,5 +1,6 @@
 /**
- * Module file to cut out re-used functions from js sorts
+ * Module file to cut out re-used functions from js sorts.
+ * Contains functionality to generate a list of random numbers (default len = 10, from 1 - 100).
  * 
  * Author: Lucas Burns
  * Version: 2017-9-26
@@ -33,7 +34,6 @@ module.exports = {
 			var temp = items[firstIdx];
 			items[firstIdx] = items[secondIdx];
 			items[secondIdx] = temp;
-			accesses += 3;
 		}
 	}
 }

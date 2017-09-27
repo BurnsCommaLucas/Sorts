@@ -1,6 +1,6 @@
 /**
  * Insertion sort implementation in Javascript.
- * Generates and sorts a list of 10 random integers 1-100.
+ * Sorts a list of random integers.
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns
@@ -19,9 +19,9 @@ function sort(items){
 	while (i < items.length){
 		var j = i;
 		while (j > 0 && items[j - 1] > items[j]) {
-			process.swap(j - 1, j, items);
-			accesses += 2;
 			comparisons++;
+			process.swap(j - 1, j, items);
+			accesses += 5;
 			j--;
 		}
 		i++;

@@ -1,6 +1,6 @@
 /**
  * Merge sort implementation in Javascript.
- * Generates and sorts a list of 10 random integers 1-100.
+ * Sorts a list of random integers.
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns

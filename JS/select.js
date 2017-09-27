@@ -1,6 +1,6 @@
 /**
  * Selection sort implementation in Javascript.
- * Generates and sorts a list of random integers.
+ * Sorts a list of random integers.
  * Tracks and displays # of array accesses and comparisons completed during sorting.
  * 
  * Author: Lucas Burns
@@ -26,6 +26,7 @@ function sort(items){
 		}
 		if (min != i){
 			process.swap(i, min, items);
+			accesses += 3;
 		}
 	}
 }

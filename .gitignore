@@ -3,4 +3,4 @@
 JS/node_modules/*
 node_modules/*
 *.json
-JS/*.json
+*.pyc
