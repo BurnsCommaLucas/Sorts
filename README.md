@@ -43,6 +43,7 @@ or you can enable execution of the python file and run it that way (saves on typ
 
 ---
 ## Changelog
+* 2017-Sep-27: Added merge, bubble, and merge python sorts & moved comparison and access counters to process.py
 * 2017-Sep-26: Separated redundant code into helper module, fixed js/JS path conflict, added python versions of insert and sorting helper module
 * 2017-Sep-10: Added Selection sort, removed flags
 * 2017-Sep-01: Initial codebase, 3 basic sorts, light customization options
