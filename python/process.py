@@ -16,3 +16,9 @@ def swap(first, second, items):
 		temp = items[first]
 		items[first] = items[second]
 		items[second] = temp
+
+def initCounters():
+	global comparisons
+	comparisons = 0
+	global accesses
+	accesses = 0
