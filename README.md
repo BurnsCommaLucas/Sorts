@@ -19,15 +19,11 @@ Each program by default will generate a 10 integer list of random numbers from 1
 
 To run these files you will need one of the following depending on the language you choose:
 
----
-
 ### Running a JavaScript file:
 
 Built with [node.js](https://nodejs.org/en/)
 
     node <pathToFile>
-
----
 
 ### Running a Python file:
 
