@@ -1,6 +1,8 @@
 /**
  * Module file to cut out re-used functions from js sorts.
- * Contains functionality to generate a list of random numbers (default len = 10, from 1 - 100).
+ * Contains functionality to:
+ *  	Generate a list of random numbers (default len = 10, from 1 - 100)
+ * 		Swap two items in an array in-place (mostly)
  * 
  * Author: Lucas Burns
  * Version: 2017-9-26

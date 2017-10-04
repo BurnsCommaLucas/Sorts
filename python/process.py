@@ -1,4 +1,9 @@
-"""process.py: Code used by more than one sorting file."""
+"""process.py: Code used by more than one sorting file.
+Contains functionality to:
+	Generate a list of random numbers in a range
+	Swap two items in an array in place (mostly)
+	Initialize global variables
+"""
 
 __author__ = "Lucas Burns"
 __version__ = "2017-9-26"
