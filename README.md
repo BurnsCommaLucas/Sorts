@@ -8,6 +8,7 @@ In this repo I've made some basic sorting algorithms. So far these are just in J
 * [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
 * [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
 * [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
+* [Stooge sort](https://en.wikipedia.org/wiki/Stooge_sort)
 
 The sorts are currently available in:
 
@@ -50,6 +51,8 @@ From the command line if you have Ruby installed, simply type:
 
 ---
 ## Changelog
+* 2018-Dec-20: Added Stooge sort in Python. Fix for bubble.py, update to process.py
+
 * 2017-Oct-03: Added Ruby processing module, insertion sort, and relevant documentation
 
 * 2017-Sep-27: Added merge, bubble, and select python sorts & moved comparison and access counters to process.py
