@@ -14,7 +14,7 @@ def sort(items):
 		for i in range(0, len(items) - 1):
 			process.comparisons += 1
 			if items[i] > items[i + 1]:
-				process.swapped = True
+				swapped = True
 				process.swap(i, i + 1, items)
 				process.accesses += 3
 
